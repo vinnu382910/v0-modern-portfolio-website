@@ -15,6 +15,11 @@ This portfolio is a **space-themed, modern, and elegant personal website** desig
 - 🧩 **Full Code Generation**: Every component, layout, and style was generated automatically — no manual coding needed.
 - 🚀 **One-Click Deployment**: Easily push code to GitHub and deploy directly to Vercel, all from within V0.
 - 🧠 **TailwindCSS**: Clean, responsive, and scalable styling by default.
+- 🛠️ **Smart Suggestions**: I loved the intelligent recommendations like adding 3D canvas animations using **Canvas.js** and customizing **gradient colors** to match my theme perfectly.
+- 🔧 **Self-Healing Code**: V0 automatically detected and fixed errors during development without requiring manual intervention.
+- 📝 **Editable Code Output**: V0 gives you full control to edit the generated code whenever needed — no lock-in.
+- 🔁 **Smart Code Translation**: I provided React code, and V0 seamlessly converted and integrated it into a proper **Next.js** structure within my application.
+
 
 <br />
 
