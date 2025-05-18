@@ -1,0 +1,346 @@
+/* Remove the Google Fonts import */
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Rancho&family=Water+Brush&display=swap"); */
+
+.skills-main-cont {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.skills_section {
+  border: none;
+  background-color: transparent;
+  padding: 20px;
+  width: 100%;
+}
+
+.skills_head {
+  width: 100%;
+  text-align: center;
+}
+
+.skills_head h2 {
+  font-size: 30px;
+  margin-bottom: -5px;
+  color: var(--foreground);
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
+}
+
+/* Theme-specific styling for the "Skills" heading */
+.theme-space .skills_head h2 span {
+  color: hsl(var(--space-primary));
+}
+
+.theme-neural .skills_head h2 span {
+  color: hsl(var(--neural-primary));
+}
+
+.theme-light .skills_head h2 span {
+  color: hsl(var(--light-primary));
+}
+
+.theme-dark .skills_head h2 span {
+  color: hsl(var(--dark-primary));
+}
+
+.skills_main {
+  padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+
+@media (max-width: 1024px) {
+  .skills_main {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills_main {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+}
+
+.skill_bar .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  color: var(--foreground);
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.skill_bar .bar {
+  width: 100%;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  margin-top: 5px;
+  position: relative;
+}
+
+.skill_bar .bar span {
+  height: 100%;
+  position: absolute;
+  border-radius: 25px;
+  width: 0;
+  transition: width 2s ease-in-out;
+}
+
+.skill_bar .bar span.animate {
+  width: var(--skill-width);
+}
+
+/* Theme-specific skill bar colors */
+.theme-space .skill_bar .bar .html {
+  --skill-width: 100%;
+  background: linear-gradient(105.32deg, hsl(var(--space-primary)) 25.75%, hsl(var(--space-secondary)) 88.38%);
+}
+.theme-space .skill_bar .bar .bootstrap {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--space-primary)), hsl(var(--space-secondary)));
+}
+.theme-space .skill_bar .bar .css {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--space-primary)), hsl(var(--space-secondary)));
+}
+.theme-space .skill_bar .bar .python {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--space-primary)), hsl(var(--space-secondary)));
+}
+.theme-space .skill_bar .bar .js {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--space-primary)), hsl(var(--space-secondary)));
+}
+.theme-space .skill_bar .bar .git {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--space-primary)), hsl(var(--space-secondary)));
+}
+.theme-space .skill_bar .bar .react {
+  --skill-width: 95%;
+  background: linear-gradient(to right, hsl(var(--space-primary)), hsl(var(--space-secondary)));
+}
+.theme-space .skill_bar .bar .node {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--space-primary)), hsl(var(--space-secondary)));
+}
+.theme-space .skill_bar .bar .sql {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--space-primary)), hsl(var(--space-secondary)));
+}
+.theme-space .skill_bar .bar .flexbox {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--space-primary)), hsl(var(--space-secondary)));
+}
+.theme-space .skill_bar .bar .dsa {
+  --skill-width: 50%;
+  background: linear-gradient(to right, hsl(var(--space-primary)), hsl(var(--space-secondary)));
+}
+.theme-space .skill_bar .bar .mongo {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--space-primary)), hsl(var(--space-secondary)));
+}
+
+.theme-neural .skill_bar .bar .html {
+  --skill-width: 100%;
+  background: linear-gradient(105.32deg, hsl(var(--neural-primary)) 25.75%, hsl(var(--neural-secondary)) 88.38%);
+}
+.theme-neural .skill_bar .bar .bootstrap {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--neural-primary)), hsl(var(--neural-secondary)));
+}
+.theme-neural .skill_bar .bar .css {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--neural-primary)), hsl(var(--neural-secondary)));
+}
+.theme-neural .skill_bar .bar .python {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--neural-primary)), hsl(var(--neural-secondary)));
+}
+.theme-neural .skill_bar .bar .js {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--neural-primary)), hsl(var(--neural-secondary)));
+}
+.theme-neural .skill_bar .bar .git {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--neural-primary)), hsl(var(--neural-secondary)));
+}
+.theme-neural .skill_bar .bar .react {
+  --skill-width: 95%;
+  background: linear-gradient(to right, hsl(var(--neural-primary)), hsl(var(--neural-secondary)));
+}
+.theme-neural .skill_bar .bar .node {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--neural-primary)), hsl(var(--neural-secondary)));
+}
+.theme-neural .skill_bar .bar .sql {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--neural-primary)), hsl(var(--neural-secondary)));
+}
+.theme-neural .skill_bar .bar .flexbox {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--neural-primary)), hsl(var(--neural-secondary)));
+}
+.theme-neural .skill_bar .bar .dsa {
+  --skill-width: 50%;
+  background: linear-gradient(to right, hsl(var(--neural-primary)), hsl(var(--neural-secondary)));
+}
+.theme-neural .skill_bar .bar .mongo {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--neural-primary)), hsl(var(--neural-secondary)));
+}
+
+.theme-light .skill_bar .bar .html {
+  --skill-width: 100%;
+  background: linear-gradient(105.32deg, hsl(var(--light-primary)) 25.75%, hsl(var(--light-secondary)) 88.38%);
+}
+.theme-light .skill_bar .bar .bootstrap {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--light-primary)), hsl(var(--light-secondary)));
+}
+.theme-light .skill_bar .bar .css {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--light-primary)), hsl(var(--light-secondary)));
+}
+.theme-light .skill_bar .bar .python {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--light-primary)), hsl(var(--light-secondary)));
+}
+.theme-light .skill_bar .bar .js {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--light-primary)), hsl(var(--light-secondary)));
+}
+.theme-light .skill_bar .bar .git {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--light-primary)), hsl(var(--light-secondary)));
+}
+.theme-light .skill_bar .bar .react {
+  --skill-width: 95%;
+  background: linear-gradient(to right, hsl(var(--light-primary)), hsl(var(--light-secondary)));
+}
+.theme-light .skill_bar .bar .node {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--light-primary)), hsl(var(--light-secondary)));
+}
+.theme-light .skill_bar .bar .sql {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--light-primary)), hsl(var(--light-secondary)));
+}
+.theme-light .skill_bar .bar .flexbox {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--light-primary)), hsl(var(--light-secondary)));
+}
+.theme-light .skill_bar .bar .dsa {
+  --skill-width: 50%;
+  background: linear-gradient(to right, hsl(var(--light-primary)), hsl(var(--light-secondary)));
+}
+.theme-light .skill_bar .bar .mongo {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--light-primary)), hsl(var(--light-secondary)));
+}
+
+.theme-dark .skill_bar .bar .html {
+  --skill-width: 100%;
+  background: linear-gradient(105.32deg, hsl(var(--dark-primary)) 25.75%, hsl(var(--dark-secondary)) 88.38%);
+}
+.theme-dark .skill_bar .bar .bootstrap {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--dark-primary)), hsl(var(--dark-secondary)));
+}
+.theme-dark .skill_bar .bar .css {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--dark-primary)), hsl(var(--dark-secondary)));
+}
+.theme-dark .skill_bar .bar .python {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--dark-primary)), hsl(var(--dark-secondary)));
+}
+.theme-dark .skill_bar .bar .js {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--dark-primary)), hsl(var(--dark-secondary)));
+}
+.theme-dark .skill_bar .bar .git {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--dark-primary)), hsl(var(--dark-secondary)));
+}
+.theme-dark .skill_bar .bar .react {
+  --skill-width: 95%;
+  background: linear-gradient(to right, hsl(var(--dark-primary)), hsl(var(--dark-secondary)));
+}
+.theme-dark .skill_bar .bar .node {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--dark-primary)), hsl(var(--dark-secondary)));
+}
+.theme-dark .skill_bar .bar .sql {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--dark-primary)), hsl(var(--dark-secondary)));
+}
+.theme-dark .skill_bar .bar .flexbox {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--dark-primary)), hsl(var(--dark-secondary)));
+}
+.theme-dark .skill_bar .bar .dsa {
+  --skill-width: 50%;
+  background: linear-gradient(to right, hsl(var(--dark-primary)), hsl(var(--dark-secondary)));
+}
+.theme-dark .skill_bar .bar .mongo {
+  --skill-width: 100%;
+  background: linear-gradient(to right, hsl(var(--dark-primary)), hsl(var(--dark-secondary)));
+}
+
+.skill-cont {
+  display: flex;
+  align-items: center;
+}
+
+.skill-name {
+  margin-left: 10px;
+  background-clip: text;
+}
+
+.skill-img {
+  height: 30px;
+  width: 30px;
+  border: none;
+  background-color: white;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.skills-para {
+  padding-top: 20px;
+  color: var(--foreground);
+  opacity: 0.8;
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 400;
+}
+
+/* Glass card effect for the skills section in space and neural themes */
+.theme-space .skills_section,
+.theme-neural .skills_section {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.theme-light .skills_section {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.theme-dark .skills_section {
+  background-color: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}

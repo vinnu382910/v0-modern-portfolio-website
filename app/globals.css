@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --space-primary: 231, 97%, 72%;
+  --space-secondary: 250, 95%, 68%;
+  --space-accent: 280, 100%, 70%;
+  --space-background: 240, 20%, 3%;
+  --space-foreground: 0, 0%, 100%;
+
+  --neural-primary: 340, 82%, 52%;
+  --neural-secondary: 10, 90%, 60%;
+  --neural-accent: 30, 100%, 65%;
+  --neural-background: 240, 10%, 4%;
+  --neural-foreground: 0, 0%, 100%;
+
+  --light-primary: 220, 70%, 50%;
+  --light-secondary: 250, 70%, 60%;
+  --light-accent: 280, 80%, 65%;
+  --light-background: 0, 0%, 100%;
+  --light-foreground: 240, 10%, 10%;
+
+  --dark-primary: 220, 70%, 50%;
+  --dark-secondary: 250, 70%, 60%;
+  --dark-accent: 280, 80%, 65%;
+  --dark-background: 240, 10%, 10%;
+  --dark-foreground: 0, 0%, 100%;
+}
+
+.theme-space {
+  --primary: var(--space-primary);
+  --secondary: var(--space-secondary);
+  --accent: var(--space-accent);
+  --background: var(--space-background);
+  --foreground: var(--space-foreground);
+}
+
+.theme-neural {
+  --primary: var(--neural-primary);
+  --secondary: var(--neural-secondary);
+  --accent: var(--neural-accent);
+  --background: var(--neural-background);
+  --foreground: var(--neural-foreground);
+}
+
+.theme-light {
+  --primary: var(--light-primary);
+  --secondary: var(--light-secondary);
+  --accent: var(--light-accent);
+  --background: var(--light-background);
+  --foreground: var(--light-foreground);
+}
+
+.theme-dark {
+  --primary: var(--dark-primary);
+  --secondary: var(--dark-secondary);
+  --accent: var(--dark-accent);
+  --background: var(--dark-background);
+  --foreground: var(--dark-foreground);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .glow-border {
+    @apply relative;
+  }
+
+  .glow-border::before {
+    content: "";
+    @apply absolute -inset-0.5 rounded-full bg-gradient-to-r from-primary to-secondary blur opacity-75 transition-opacity duration-300 group-hover:opacity-100;
+  }
+
+  .glass-card {
+    @apply bg-background/20 backdrop-blur-md border border-white/10 rounded-xl shadow-lg;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-primary/50 hover:scale-105 active:scale-95;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold mb-10 text-center relative;
+  }
+
+  .section-title::after {
+    content: "";
+    @apply absolute left-1/2 -translate-x-1/2 bottom-0 w-20 h-1 bg-gradient-to-r from-primary to-secondary rounded-full;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-primary to-secondary rounded-full;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Theme-specific styles */
+.theme-light .glass-card {
+  @apply bg-white/90 backdrop-blur-md border border-gray-200 shadow-lg;
+}
+
+.theme-dark .glass-card {
+  @apply bg-gray-900/90 backdrop-blur-md border border-gray-800 shadow-lg;
+}
