@@ -28,7 +28,7 @@ export default function Hero() {
     {
       name: "Instagram",
       icon: <Instagram className="w-5 h-5" />,
-      url: "https://www.instagram.com/mr_dio__07/",
+      url: "https://www.instagram.com/vinay_mern/",
     },
     {
       name: "LeetCode",

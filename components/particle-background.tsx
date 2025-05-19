@@ -167,11 +167,11 @@ export default function ParticleBackground() {
     }
   }
 
-  // Don't show particles for light theme
+  // For light theme, use a subtle gradient background instead of particles
   if (theme === "light") {
     return (
-      <div className="fixed inset-0 -z-10 bg-background">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-white"></div>
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50"></div>
       </div>
     )
   }

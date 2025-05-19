@@ -121,3 +121,56 @@ html {
 .theme-dark .glass-card {
   @apply bg-gray-900/90 backdrop-blur-md border border-gray-800 shadow-lg;
 }
+
+/* Light theme specific overrides */
+.theme-light {
+  color-scheme: light;
+}
+
+.theme-light .text-white\/80 {
+  @apply text-gray-700;
+}
+
+.theme-light .text-white\/70 {
+  @apply text-gray-600;
+}
+
+.theme-light .text-white\/60 {
+  @apply text-gray-500;
+}
+
+.theme-light .bg-white\/10 {
+  @apply bg-gray-200;
+}
+
+.theme-light .bg-white\/5 {
+  @apply bg-gray-100;
+}
+
+.theme-light .border-white\/10 {
+  @apply border-gray-300;
+}
+
+.theme-light .border-white\/20 {
+  @apply border-gray-300;
+}
+
+.theme-light .hover\:bg-primary\/20:hover {
+  background-color: hsla(var(--light-primary), 0.2);
+}
+
+.theme-light .bg-primary\/20 {
+  background-color: hsla(var(--light-primary), 0.2);
+}
+
+.theme-light .border-primary\/50 {
+  border-color: hsla(var(--light-primary), 0.5);
+}
+
+.theme-light .hover\:text-primary:hover {
+  color: hsl(var(--light-primary));
+}
+
+.theme-light .text-primary {
+  color: hsl(var(--light-primary));
+}
