@@ -3,23 +3,27 @@ import type { Metadata } from "next"
 import { Space_Grotesk, Poppins } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import CustomCursor from "@/components/custom-cursor"
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space-grotesk",
+  display: "swap",
 })
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-poppins",
+  display: "swap",
 })
 
 export const metadata: Metadata = {
-  title: "Kalva Vinay | MERN Stack Developer",
+  title: "Kalva Vinay - Full Stack Developer",
   description:
-    "Portfolio website of Kalva Vinay, a MERN Stack Developer specializing in frontend, backend, and Android development.",
+    "Full Stack Developer specializing in MERN Stack development. B.Tech graduate from Ganapathy Engineering College with expertise in React, Node.js, MongoDB, and modern web technologies.",
+  keywords: "Full Stack Developer, MERN Stack, React, Node.js, MongoDB, JavaScript, Web Development, Kalva Vinay",
+  authors: [{ name: "Kalva Vinay" }],
+  creator: "Kalva Vinay",
     generator: 'v0.dev'
 }
 
@@ -37,7 +41,6 @@ export default function RootLayout({
           enableSystem={false}
           themes={["space", "neural", "light", "dark"]}
         >
-          <CustomCursor />
           {children}
         </ThemeProvider>
       </body>

@@ -32,31 +32,41 @@ export function ThemeProvider({
   defaultTheme = "space",
   themes = ["space", "neural", "light", "dark"],
   attribute = "class",
-  enableSystem = false,
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(defaultTheme)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!mounted) return
+
     const root = window.document.documentElement
 
+    // Remove all theme classes
     root.classList.remove("theme-space", "theme-neural", "theme-light", "theme-dark")
+
+    // Add current theme class
     root.classList.add(`theme-${theme}`)
 
-    if (attribute === "class") {
-      root.classList.remove(...themes.map((t) => t))
-      root.classList.add(theme)
-    } else {
-      root.setAttribute(attribute, theme)
-    }
-  }, [theme, attribute, themes])
+    // Also set data attribute for additional styling
+    root.setAttribute("data-theme", theme)
+  }, [theme, mounted])
 
   const value = {
     theme,
-    setTheme: (theme: Theme) => {
-      setTheme(theme)
+    setTheme: (newTheme: Theme) => {
+      console.log("Setting theme to:", newTheme) // Debug log
+      setTheme(newTheme)
     },
     themes,
+  }
+
+  if (!mounted) {
+    return <>{children}</>
   }
 
   return (

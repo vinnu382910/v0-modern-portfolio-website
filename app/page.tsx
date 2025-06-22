@@ -1,10 +1,12 @@
 import Navbar from "@/components/navbar"
 import Hero from "@/components/hero"
 import About from "@/components/about"
+import Experience from "@/components/experience"
 import Skills from "@/components/skills"
 import Projects from "@/components/projects"
 import Certificates from "@/components/certificates"
 import Contact from "@/components/contact"
+import Footer from "@/components/footer"
 import ParticleBackground from "@/components/particle-background"
 import ThemeToggle from "@/components/theme-toggle"
 import LoadingScreen from "@/components/loading-screen"
@@ -24,6 +26,9 @@ export default function Home() {
       <section id="about" className="min-h-screen py-20">
         <About />
       </section>
+      <section id="experience" className="min-h-screen py-20">
+        <Experience />
+      </section>
       <section id="skills" className="min-h-screen py-20">
         <Skills />
       </section>
@@ -36,6 +41,7 @@ export default function Home() {
       <section id="contact" className="min-h-screen py-20">
         <Contact />
       </section>
+      <Footer />
     </main>
   )
 }

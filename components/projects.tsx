@@ -66,11 +66,7 @@ export default function Projects() {
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute top-2 right-2">
-                <span
-                  className={`px-3 py-1 rounded-full text-xs font-medium ${
-                    project.type === "Frontend" ? "bg-primary/80" : "bg-secondary/80"
-                  }`}
-                >
+                <span className="px-3 py-1 rounded-full text-xs font-medium bg-blue-600/90 text-white">
                   {project.type}
                 </span>
               </div>

@@ -2,7 +2,7 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Mail, MapPin } from "lucide-react"
+import { Mail, MapPin, Phone, GraduationCap, Award } from "lucide-react"
 import Image from "next/image"
 
 export default function About() {
@@ -51,16 +51,34 @@ export default function About() {
           <h4 className="text-xl text-primary mb-4">Full Stack Developer</h4>
 
           <p className="mb-6 text-white/80 leading-relaxed">
-            👋 Hey there! I&apos;m Vinay, a passionate full-stack developer with a knack for building robust and
-            user-friendly web applications. I&apos;m currently in my final year pursuing a B.Tech in Computer Science
-            with a specialization in Cyber Security at Ganapathy Engineering College. I thrive on turning ideas into
-            digital realities.
+            👋 Hey there! I&apos;m Vinay, a passionate full-stack developer with expertise in building robust and
+            user-friendly web applications. I&apos;m a B.Tech graduate in Computer Science Engineering with
+            specialization in Cyber Security from Ganapathy Engineering College, Warangal (CGPA: 7.0/10).
           </p>
+
           <p className="mb-6 text-white/80 leading-relaxed">
-            In 2022, I embarked on a transformative journey with Nxt Wave 🚀, where I honed my skills in Frontend
-            development 🎨. Since then, I&apos;ve been dedicated to expanding my expertise 📚 and diving into Backend
-            technologies 🔧.
+            In 2022, I embarked on a transformative journey with Nxt Wave 🚀, where I earned an Industry Ready
+            Certification in Full-stack Development. Since then, I&apos;ve been dedicated to expanding my expertise 📚
+            and have completed virtual internships at Codes on Bytes and Bharat Intern, working on diverse projects from
+            weather apps to e-commerce platforms.
           </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div className="flex items-center gap-2 text-white/80">
+              <GraduationCap className="text-primary" size={18} />
+              <div>
+                <p className="text-sm font-medium">Education</p>
+                <p className="text-xs">B.Tech CSE (Cyber Security)</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 text-white/80">
+              <Award className="text-primary" size={18} />
+              <div>
+                <p className="text-sm font-medium">Certification</p>
+                <p className="text-xs">Full-stack Development</p>
+              </div>
+            </div>
+          </div>
 
           <div className="flex flex-col gap-3 text-white/80">
             <div className="flex items-center gap-2">
@@ -70,8 +88,14 @@ export default function About() {
               </a>
             </div>
             <div className="flex items-center gap-2">
+              <Phone className="text-primary" size={18} />
+              <a href="tel:+917286945691" className="hover:text-primary transition-colors">
+                +91 7286945691
+              </a>
+            </div>
+            <div className="flex items-center gap-2">
               <MapPin className="text-primary" size={18} />
-              <span>Telangana, India - 506371</span>
+              <span>Warangal, Telangana, India</span>
             </div>
           </div>
         </motion.div>

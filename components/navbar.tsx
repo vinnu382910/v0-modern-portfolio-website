@@ -3,15 +3,18 @@
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { Link as ScrollLink } from "react-scroll"
+import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 
 const navItems = [
-  { name: "Home", to: "home" },
-  { name: "About", to: "about" },
-  { name: "Skills", to: "skills" },
-  { name: "Projects", to: "projects" },
-  { name: "Certificates", to: "certificates" },
-  { name: "Contact", to: "contact" },
+  { name: "Home", to: "home", href: "/" },
+  { name: "About", to: "about", href: "/#about" },
+  { name: "Experience", to: "experience", href: "/#experience" },
+  { name: "Skills", to: "skills", href: "/#skills" },
+  { name: "Projects", to: "projects", href: "/#projects" },
+  { name: "Certificates", to: "certificates", href: "/#certificates" },
+  { name: "Blog", to: "blog", href: "/blog" },
+  { name: "Contact", to: "contact", href: "/#contact" },
 ]
 
 export default function Navbar() {
@@ -33,39 +36,58 @@ export default function Navbar() {
         scrolled ? "bg-background/80 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <nav className="container mx-auto px-4 py-4 flex justify-between items-center" role="navigation">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
           className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
         >
-          Kalva Vinay
+          <Link href="/" aria-label="Kalva Vinay - Full Stack Developer Portfolio">
+            Kalva Vinay
+          </Link>
         </motion.div>
 
         {/* Desktop Navigation */}
-        <motion.nav
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="hidden md:flex space-x-8"
         >
-          {navItems.map((item, index) => (
-            <ScrollLink
-              key={item.to}
-              to={item.to}
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              className="relative text-white hover:text-primary cursor-pointer transition-colors duration-300 group"
-              activeClass="text-primary"
-            >
-              {item.name}
-              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
-            </ScrollLink>
-          ))}
-        </motion.nav>
+          {navItems.map((item, index) => {
+            if (item.name === "Blog") {
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="relative text-white hover:text-primary cursor-pointer transition-colors duration-300 group"
+                  aria-label={`Navigate to ${item.name}`}
+                >
+                  {item.name}
+                  <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
+                </Link>
+              )
+            }
+
+            return (
+              <ScrollLink
+                key={item.to}
+                to={item.to}
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                className="relative text-white hover:text-primary cursor-pointer transition-colors duration-300 group"
+                activeClass="text-primary"
+                aria-label={`Navigate to ${item.name} section`}
+              >
+                {item.name}
+                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
+              </ScrollLink>
+            )
+          })}
+        </motion.div>
 
         {/* Mobile Menu Button */}
         <motion.button
@@ -74,10 +96,12 @@ export default function Navbar() {
           transition={{ duration: 0.5 }}
           className="md:hidden text-white focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle mobile menu"
+          aria-expanded={isOpen}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </motion.button>
-      </div>
+      </nav>
 
       {/* Mobile Navigation */}
       <AnimatePresence>
@@ -90,21 +114,38 @@ export default function Navbar() {
             className="md:hidden bg-background/95 backdrop-blur-md"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <ScrollLink
-                  key={item.to}
-                  to={item.to}
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  className="text-white hover:text-primary py-2 border-b border-white/10"
-                  activeClass="text-primary"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </ScrollLink>
-              ))}
+              {navItems.map((item) => {
+                if (item.name === "Blog") {
+                  return (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="text-white hover:text-primary py-2 border-b border-white/10"
+                      onClick={() => setIsOpen(false)}
+                      aria-label={`Navigate to ${item.name}`}
+                    >
+                      {item.name}
+                    </Link>
+                  )
+                }
+
+                return (
+                  <ScrollLink
+                    key={item.to}
+                    to={item.to}
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    className="text-white hover:text-primary py-2 border-b border-white/10"
+                    activeClass="text-primary"
+                    onClick={() => setIsOpen(false)}
+                    aria-label={`Navigate to ${item.name} section`}
+                  >
+                    {item.name}
+                  </ScrollLink>
+                )
+              })}
             </div>
           </motion.div>
         )}

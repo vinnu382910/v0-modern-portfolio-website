@@ -7,7 +7,12 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    domains: [
+      'res.cloudinary.com',
+      'media-content.ccbp.in',
+      'img.icons8.com',
+      'nxtwave-website-media-files.s3.ap-south-1.amazonaws.com'
+    ],
   },
 }
 
