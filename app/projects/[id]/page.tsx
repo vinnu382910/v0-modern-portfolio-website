@@ -7,10 +7,20 @@ import { ArrowLeft, Github, ExternalLink, Calendar, Tag, Info } from "lucide-rea
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { projects } from "@/data/projects"
-import { Canvas } from "@react-three/fiber"
-import { OrbitControls, Environment } from "@react-three/drei"
+import dynamic from "next/dynamic"
 import { Suspense } from "react"
 import { ProjectFallback } from "@/components/3d-fallback"
+
+// Dynamically import Canvas to avoid SSR issues
+const Canvas = dynamic(() => import("@react-three/fiber").then((mod) => mod.Canvas), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg animate-pulse" />
+  ),
+})
+
+const OrbitControls = dynamic(() => import("@react-three/drei").then((mod) => mod.OrbitControls), { ssr: false })
+const Environment = dynamic(() => import("@react-three/drei").then((mod) => mod.Environment), { ssr: false })
 
 // Replace the Model component with this simplified version
 function Model({ projectType }: { projectType: string }) {
@@ -22,6 +32,11 @@ export default function ProjectDetails() {
   const router = useRouter()
   const [project, setProject] = useState<any>(null)
   const [loading, setLoading] = useState(true)
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   useEffect(() => {
     if (params.id) {
@@ -64,11 +79,7 @@ export default function ProjectDetails() {
               <div className="h-[300px] relative">
                 <Image src={project.image || "/placeholder.svg"} alt={project.name} fill className="object-cover" />
                 <div className="absolute top-4 right-4">
-                  <span
-                    className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      project.type === "Frontend" ? "bg-primary/80" : "bg-secondary/80"
-                    }`}
-                  >
+                  <span className="px-3 py-1 rounded-full text-xs font-medium bg-blue-600/90 text-white">
                     {project.type}
                   </span>
                 </div>
@@ -77,16 +88,22 @@ export default function ProjectDetails() {
 
             {/* Update the 3D model section in the component to include error handling */}
             <div className="mt-8 h-[300px] glass-card overflow-hidden rounded-xl">
-              <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
-                <ambientLight intensity={0.5} />
-                <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-                <pointLight position={[-10, -10, -10]} />
-                <Suspense fallback={null}>
-                  <Model projectType={project.type} />
-                  <Environment preset="city" />
-                </Suspense>
-                <OrbitControls autoRotate />
-              </Canvas>
+              {isClient ? (
+                <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
+                  <ambientLight intensity={0.5} />
+                  <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+                  <pointLight position={[-10, -10, -10]} />
+                  <Suspense fallback={null}>
+                    <Model projectType={project.type} />
+                    <Environment preset="city" />
+                  </Suspense>
+                  <OrbitControls autoRotate />
+                </Canvas>
+              ) : (
+                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg animate-pulse flex items-center justify-center">
+                  <div className="text-primary/60">Loading 3D Model...</div>
+                </div>
+              )}
             </div>
           </motion.div>
 

@@ -5,14 +5,18 @@ import { motion, AnimatePresence } from "framer-motion"
 
 export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true)
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
+    setIsClient(true)
     const timer = setTimeout(() => {
       setIsLoading(false)
     }, 2000)
 
     return () => clearTimeout(timer)
   }, [])
+
+  if (!isClient) return null
 
   return (
     <AnimatePresence>

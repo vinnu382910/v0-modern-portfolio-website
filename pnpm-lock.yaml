@@ -19,10 +19,10 @@ importers:
         version: 1.2.3(@types/react@18.0.0)(react@18.0.0)
       '@react-three/drei':
         specifier: latest
-        version: 10.3.0(9bd712b9723458ee29ab4d92c5ab332b)
+        version: 10.3.0(5b166bf5bb226d9c1c837a59321a9a02)
       '@react-three/fiber':
         specifier: latest
-        version: 9.1.2(@types/react@18.0.0)(expo-asset@11.1.5(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(expo-file-system@18.1.10(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0)))(expo-gl@15.1.6(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-dom@18.0.0(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0)(three@0.160.0)
+        version: 9.1.2(@types/react@18.0.0)(expo-asset@11.1.5(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(expo-file-system@18.1.10(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0)))(expo-gl@15.1.6(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-dom@18.0.0(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0)(three@0.177.0)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -43,7 +43,7 @@ importers:
         version: 15.1.6(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0)
       framer-motion:
         specifier: latest
-        version: 12.18.1(@emotion/is-prop-valid@1.3.1)(react-dom@18.0.0(react@18.0.0))(react@18.0.0)
+        version: 12.18.2(@emotion/is-prop-valid@1.3.1)(react-dom@18.0.0(react@18.0.0))(react@18.0.0)
       lucide-react:
         specifier: ^0.454.0
         version: 0.454.0(react@18.0.0)
@@ -75,8 +75,8 @@ importers:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.17)
       three:
-        specifier: ^0.160.0
-        version: 0.160.0
+        specifier: latest
+        version: 0.177.0
       tsparticles:
         specifier: ^2.12.0
         version: 2.12.0
@@ -2458,8 +2458,8 @@ packages:
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
-  framer-motion@12.18.1:
-    resolution: {integrity: sha512-6o4EDuRPLk4LSZ1kRnnEOurbQ86MklVk+Y1rFBUKiF+d2pCdvMjWVu0ZkyMVCTwl5UyTH2n/zJEJx+jvTYuxow==}
+  framer-motion@12.18.2:
+    resolution: {integrity: sha512-XesLt+IPAkOheawQ2xINL+9YUdx96zpRCJLTGKfM6SwrKfvPbENX7Iw3aNnDRQl+gFyXYWM/+rVP7NEF4JSiUQ==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -3233,11 +3233,11 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  motion-dom@12.18.1:
-    resolution: {integrity: sha512-dR/4EYT23Snd+eUSLrde63Ws3oXQtJNw/krgautvTfwrN/2cHfCZMdu6CeTxVfRRWREW3Fy1f5vobRDiBb/q+w==}
+  motion-dom@12.18.2:
+    resolution: {integrity: sha512-XKqpwAE/2bsjicpEP9s/OGVoJpEUnrT+uUufEq9usEtc+Wl2v3EnFLWsByH5KeiXKEuESj2GLoHev0/3nVbubg==}
 
-  motion-utils@12.18.1:
-    resolution: {integrity: sha512-az26YDU4WoDP0ueAkUtABLk2BIxe28d8NH1qWT8jPGhPyf44XTdDUh8pDk9OPphaSrR9McgpcJlgwSOIw/sfkA==}
+  motion-utils@12.18.2:
+    resolution: {integrity: sha512-CMnw6jUdEw/EZ7DXWkej/SVuKSTIpNbVDrZMSEXyhMFsW7kTZbCXvPwrnpmeBhsZNzPdU75wHQXBEzdLOlyocQ==}
 
   ms@2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
@@ -4129,8 +4129,8 @@ packages:
     peerDependencies:
       three: '>=0.128.0'
 
-  three@0.160.0:
-    resolution: {integrity: sha512-DLU8lc0zNIPkM7rH5/e1Ks1Z8tWCGRq6g8mPowdDJpw1CFBJMU7UoJjC6PefXW7z//SSl0b2+GCw14LB+uDhng==}
+  three@0.177.0:
+    resolution: {integrity: sha512-EiXv5/qWAaGI+Vz2A+JfavwYCMdGjxVsrn3oBwllUoqYeaBO75J63ZfyaQKoiLrqNHoTlUc6PFgMXnS0kI45zg==}
 
   throat@5.0.0:
     resolution: {integrity: sha512-fcwX4mndzpLQKBS1DVYhGAcYaYt7vsHNIvQV+WXMvnow5cgjPphq5CaayLaGsjRdSCKZFNGt7/GYAuXaNOiYCA==}
@@ -5685,10 +5685,10 @@ snapshots:
 
   '@mediapipe/tasks-vision@0.10.17': {}
 
-  '@monogrid/gainmap-js@3.1.0(three@0.160.0)':
+  '@monogrid/gainmap-js@3.1.0(three@0.177.0)':
     dependencies:
       promise-worker-transferable: 1.0.4
-      three: 0.160.0
+      three: 0.177.0
 
   '@napi-rs/wasm-runtime@0.2.11':
     dependencies:
@@ -6137,28 +6137,28 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.0.0
 
-  '@react-three/drei@10.3.0(9bd712b9723458ee29ab4d92c5ab332b)':
+  '@react-three/drei@10.3.0(5b166bf5bb226d9c1c837a59321a9a02)':
     dependencies:
       '@babel/runtime': 7.27.1
       '@mediapipe/tasks-vision': 0.10.17
-      '@monogrid/gainmap-js': 3.1.0(three@0.160.0)
-      '@react-three/fiber': 9.1.2(@types/react@18.0.0)(expo-asset@11.1.5(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(expo-file-system@18.1.10(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0)))(expo-gl@15.1.6(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-dom@18.0.0(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0)(three@0.160.0)
+      '@monogrid/gainmap-js': 3.1.0(three@0.177.0)
+      '@react-three/fiber': 9.1.2(@types/react@18.0.0)(expo-asset@11.1.5(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(expo-file-system@18.1.10(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0)))(expo-gl@15.1.6(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-dom@18.0.0(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0)(three@0.177.0)
       '@use-gesture/react': 10.3.1(react@18.0.0)
-      camera-controls: 2.10.1(three@0.160.0)
+      camera-controls: 2.10.1(three@0.177.0)
       cross-env: 7.0.3
       detect-gpu: 5.0.70
       glsl-noise: 0.0.0
       hls.js: 1.6.2
-      maath: 0.10.8(@types/three@0.160.0)(three@0.160.0)
-      meshline: 3.3.1(three@0.160.0)
+      maath: 0.10.8(@types/three@0.160.0)(three@0.177.0)
+      meshline: 3.3.1(three@0.177.0)
       react: 18.0.0
-      stats-gl: 2.4.2(@types/three@0.160.0)(three@0.160.0)
+      stats-gl: 2.4.2(@types/three@0.160.0)(three@0.177.0)
       stats.js: 0.17.0
       suspend-react: 0.1.3(react@18.0.0)
-      three: 0.160.0
-      three-mesh-bvh: 0.8.3(three@0.160.0)
-      three-stdlib: 2.36.0(three@0.160.0)
-      troika-three-text: 0.52.4(three@0.160.0)
+      three: 0.177.0
+      three-mesh-bvh: 0.8.3(three@0.177.0)
+      three-stdlib: 2.36.0(three@0.177.0)
+      troika-three-text: 0.52.4(three@0.177.0)
       tunnel-rat: 0.1.2(@types/react@18.0.0)(react@18.0.0)
       use-sync-external-store: 1.5.0(react@18.0.0)
       utility-types: 3.11.0
@@ -6170,7 +6170,7 @@ snapshots:
       - '@types/three'
       - immer
 
-  '@react-three/fiber@9.1.2(@types/react@18.0.0)(expo-asset@11.1.5(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(expo-file-system@18.1.10(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0)))(expo-gl@15.1.6(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-dom@18.0.0(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0)(three@0.160.0)':
+  '@react-three/fiber@9.1.2(@types/react@18.0.0)(expo-asset@11.1.5(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(expo-file-system@18.1.10(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0)))(expo-gl@15.1.6(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(expo@53.0.12(@babel/core@7.27.1)(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0))(react-dom@18.0.0(react@18.0.0))(react-native@0.80.0(@babel/core@7.27.1)(@types/react@18.0.0)(react@18.0.0))(react@18.0.0)(three@0.177.0)':
     dependencies:
       '@babel/runtime': 7.27.1
       '@types/react-reconciler': 0.28.9(@types/react@18.0.0)
@@ -6183,7 +6183,7 @@ snapshots:
       react-use-measure: 2.1.7(react-dom@18.0.0(react@18.0.0))(react@18.0.0)
       scheduler: 0.25.0
       suspend-react: 0.1.3(react@18.0.0)
-      three: 0.160.0
+      three: 0.177.0
       use-sync-external-store: 1.5.0(react@18.0.0)
       zustand: 5.0.4(@types/react@18.0.0)(react@18.0.0)(use-sync-external-store@1.5.0(react@18.0.0))
     optionalDependencies:
@@ -6822,9 +6822,9 @@ snapshots:
 
   camelcase@6.3.0: {}
 
-  camera-controls@2.10.1(three@0.160.0):
+  camera-controls@2.10.1(three@0.177.0):
     dependencies:
-      three: 0.160.0
+      three: 0.177.0
 
   caniuse-lite@1.0.30001718: {}
 
@@ -7591,10 +7591,10 @@ snapshots:
 
   fraction.js@4.3.7: {}
 
-  framer-motion@12.18.1(@emotion/is-prop-valid@1.3.1)(react-dom@18.0.0(react@18.0.0))(react@18.0.0):
+  framer-motion@12.18.2(@emotion/is-prop-valid@1.3.1)(react-dom@18.0.0(react@18.0.0))(react@18.0.0):
     dependencies:
-      motion-dom: 12.18.1
-      motion-utils: 12.18.1
+      motion-dom: 12.18.2
+      motion-utils: 12.18.2
       tslib: 2.8.1
     optionalDependencies:
       '@emotion/is-prop-valid': 1.3.1
@@ -8225,10 +8225,10 @@ snapshots:
     dependencies:
       react: 18.0.0
 
-  maath@0.10.8(@types/three@0.160.0)(three@0.160.0):
+  maath@0.10.8(@types/three@0.160.0)(three@0.177.0):
     dependencies:
       '@types/three': 0.160.0
-      three: 0.160.0
+      three: 0.177.0
 
   makeerror@1.0.12:
     dependencies:
@@ -8244,9 +8244,9 @@ snapshots:
 
   merge2@1.4.1: {}
 
-  meshline@3.3.1(three@0.160.0):
+  meshline@3.3.1(three@0.177.0):
     dependencies:
-      three: 0.160.0
+      three: 0.177.0
 
   meshoptimizer@0.18.1: {}
 
@@ -8466,11 +8466,11 @@ snapshots:
 
   mkdirp@3.0.1: {}
 
-  motion-dom@12.18.1:
+  motion-dom@12.18.2:
     dependencies:
-      motion-utils: 12.18.1
+      motion-utils: 12.18.2
 
-  motion-utils@12.18.1: {}
+  motion-utils@12.18.2: {}
 
   ms@2.0.0: {}
 
@@ -9231,10 +9231,10 @@ snapshots:
     dependencies:
       type-fest: 0.7.1
 
-  stats-gl@2.4.2(@types/three@0.160.0)(three@0.160.0):
+  stats-gl@2.4.2(@types/three@0.160.0)(three@0.177.0):
     dependencies:
       '@types/three': 0.160.0
-      three: 0.160.0
+      three: 0.177.0
 
   stats.js@0.17.0: {}
 
@@ -9445,11 +9445,11 @@ snapshots:
     dependencies:
       any-promise: 1.3.0
 
-  three-mesh-bvh@0.8.3(three@0.160.0):
+  three-mesh-bvh@0.8.3(three@0.177.0):
     dependencies:
-      three: 0.160.0
+      three: 0.177.0
 
-  three-stdlib@2.36.0(three@0.160.0):
+  three-stdlib@2.36.0(three@0.177.0):
     dependencies:
       '@types/draco3d': 1.4.10
       '@types/offscreencanvas': 2019.7.3
@@ -9457,9 +9457,9 @@ snapshots:
       draco3d: 1.5.7
       fflate: 0.6.10
       potpack: 1.0.2
-      three: 0.160.0
+      three: 0.177.0
 
-  three@0.160.0: {}
+  three@0.177.0: {}
 
   throat@5.0.0: {}
 
@@ -9476,17 +9476,17 @@ snapshots:
 
   toidentifier@1.0.1: {}
 
-  troika-three-text@0.52.4(three@0.160.0):
+  troika-three-text@0.52.4(three@0.177.0):
     dependencies:
       bidi-js: 1.0.3
-      three: 0.160.0
-      troika-three-utils: 0.52.4(three@0.160.0)
+      three: 0.177.0
+      troika-three-utils: 0.52.4(three@0.177.0)
       troika-worker-utils: 0.52.0
       webgl-sdf-generator: 1.1.1
 
-  troika-three-utils@0.52.4(three@0.160.0):
+  troika-three-utils@0.52.4(three@0.177.0):
     dependencies:
-      three: 0.160.0
+      three: 0.177.0
 
   troika-worker-utils@0.52.0: {}
 

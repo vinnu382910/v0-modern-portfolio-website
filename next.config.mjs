@@ -14,6 +14,9 @@ const nextConfig = {
       'nxtwave-website-media-files.s3.ap-south-1.amazonaws.com'
     ],
   },
+  experimental: {
+    esmExternals: 'loose',
+  },
 }
 
 export default nextConfig

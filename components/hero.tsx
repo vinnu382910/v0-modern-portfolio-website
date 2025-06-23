@@ -4,16 +4,33 @@ import { motion } from "framer-motion"
 import { TypeAnimation } from "react-type-animation"
 import { Download, Github, Instagram, Linkedin, Code } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Canvas } from "@react-three/fiber"
-import { OrbitControls, Environment, Float } from "@react-three/drei"
-import { Suspense } from "react"
+import dynamic from "next/dynamic"
+import { Suspense, useState, useEffect } from "react"
 import { LaptopFallback } from "@/components/3d-fallback"
+
+// Dynamically import Canvas to avoid SSR issues
+const Canvas = dynamic(() => import("@react-three/fiber").then((mod) => mod.Canvas), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg animate-pulse" />
+  ),
+})
+
+const OrbitControls = dynamic(() => import("@react-three/drei").then((mod) => mod.OrbitControls), { ssr: false })
+const Environment = dynamic(() => import("@react-three/drei").then((mod) => mod.Environment), { ssr: false })
+const Float = dynamic(() => import("@react-three/drei").then((mod) => mod.Float), { ssr: false })
 
 function Model() {
   return <LaptopFallback />
 }
 
 export default function Hero() {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
   const socialLinks = [
     {
       name: "LinkedIn",
@@ -52,22 +69,24 @@ export default function Hero() {
           </h1>
           <h2 className="text-xl md:text-2xl mb-6 text-white/80">
             I&apos;m a{" "}
-            <TypeAnimation
-              sequence={[
-                "Frontend Developer",
-                1000,
-                "Backend Developer",
-                1000,
-                "MERN Stack Developer",
-                1000,
-                "Android Developer",
-                1000,
-              ]}
-              wrapper="span"
-              speed={50}
-              className="text-primary font-semibold"
-              repeat={Number.POSITIVE_INFINITY}
-            />
+            {isClient && (
+              <TypeAnimation
+                sequence={[
+                  "Frontend Developer",
+                  1000,
+                  "Backend Developer",
+                  1000,
+                  "MERN Stack Developer",
+                  1000,
+                  "Android Developer",
+                  1000,
+                ]}
+                wrapper="span"
+                speed={50}
+                className="text-primary font-semibold"
+                repeat={Number.POSITIVE_INFINITY}
+              />
+            )}
           </h2>
 
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.8 }}>
@@ -115,18 +134,24 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.2 }}
           className="order-1 md:order-2 h-[300px] md:h-[400px]"
         >
-          <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
-            <ambientLight intensity={0.5} />
-            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-            <pointLight position={[-10, -10, -10]} />
-            <Suspense fallback={null}>
-              <Float speed={1.5} rotationIntensity={1} floatIntensity={2}>
-                <Model />
-              </Float>
-              <Environment preset="city" />
-            </Suspense>
-            <OrbitControls enableZoom={false} autoRotate />
-          </Canvas>
+          {isClient ? (
+            <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
+              <ambientLight intensity={0.5} />
+              <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+              <pointLight position={[-10, -10, -10]} />
+              <Suspense fallback={null}>
+                <Float speed={1.5} rotationIntensity={1} floatIntensity={2}>
+                  <Model />
+                </Float>
+                <Environment preset="city" />
+              </Suspense>
+              <OrbitControls enableZoom={false} autoRotate />
+            </Canvas>
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg animate-pulse flex items-center justify-center">
+              <div className="text-primary/60">Loading 3D Model...</div>
+            </div>
+          )}
         </motion.div>
       </div>
     </div>

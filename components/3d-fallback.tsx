@@ -1,13 +1,12 @@
 "use client"
 
-// Create a new component for fallback 3D objects
 import { useRef } from "react"
 import { useFrame } from "@react-three/fiber"
-import type { MeshProps } from "@react-three/fiber"
+import type { Mesh } from "three"
 
 export function LaptopFallback() {
-  const baseRef = useRef<MeshProps>()
-  const screenRef = useRef<MeshProps>()
+  const baseRef = useRef<Mesh>(null)
+  const screenRef = useRef<Mesh>(null)
 
   useFrame((state) => {
     if (baseRef.current && screenRef.current) {
@@ -46,7 +45,7 @@ export function LaptopFallback() {
 }
 
 export function ProjectFallback({ type }: { type: string }) {
-  const groupRef = useRef<any>()
+  const groupRef = useRef<Mesh>(null)
 
   useFrame((state) => {
     if (groupRef.current) {
