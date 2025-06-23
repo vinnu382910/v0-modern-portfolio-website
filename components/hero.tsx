@@ -4,24 +4,68 @@ import { motion } from "framer-motion"
 import { TypeAnimation } from "react-type-animation"
 import { Download, Github, Instagram, Linkedin, Code } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import dynamic from "next/dynamic"
-import { Suspense, useState, useEffect } from "react"
-import { LaptopFallback } from "@/components/3d-fallback"
+import { useState, useEffect } from "react"
 
-// Dynamically import Canvas to avoid SSR issues
-const Canvas = dynamic(() => import("@react-three/fiber").then((mod) => mod.Canvas), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg animate-pulse" />
-  ),
-})
+// Simple 2D fallback component instead of 3D
+function SimpleHeroGraphic() {
+  return (
+    <div className="w-full h-full flex items-center justify-center">
+      <motion.div
+        animate={{
+          rotate: [0, 360],
+          scale: [1, 1.1, 1],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Number.POSITIVE_INFINITY,
+          ease: "linear",
+        }}
+        className="relative w-48 h-48 md:w-64 md:h-64"
+      >
+        {/* Outer ring */}
+        <div className="absolute inset-0 rounded-full border-4 border-primary/30"></div>
 
-const OrbitControls = dynamic(() => import("@react-three/drei").then((mod) => mod.OrbitControls), { ssr: false })
-const Environment = dynamic(() => import("@react-three/drei").then((mod) => mod.Environment), { ssr: false })
-const Float = dynamic(() => import("@react-three/drei").then((mod) => mod.Float), { ssr: false })
+        {/* Middle ring */}
+        <motion.div
+          animate={{ rotate: [360, 0] }}
+          transition={{ duration: 12, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+          className="absolute inset-4 rounded-full border-2 border-secondary/50"
+        ></motion.div>
 
-function Model() {
-  return <LaptopFallback />
+        {/* Inner circle */}
+        <div className="absolute inset-8 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+          <motion.div
+            animate={{ y: [-10, 10, -10] }}
+            transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+            className="text-4xl md:text-6xl"
+          >
+            💻
+          </motion.div>
+        </div>
+
+        {/* Floating dots */}
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            animate={{
+              rotate: [0, 360],
+              scale: [1, 1.5, 1],
+            }}
+            transition={{
+              duration: 6 + i,
+              repeat: Number.POSITIVE_INFINITY,
+              delay: i * 0.5,
+            }}
+            className="absolute w-2 h-2 bg-primary rounded-full"
+            style={{
+              top: `${20 + Math.sin((i * 60 * Math.PI) / 180) * 30}%`,
+              left: `${50 + Math.cos((i * 60 * Math.PI) / 180) * 40}%`,
+            }}
+          ></motion.div>
+        ))}
+      </motion.div>
+    </div>
+  )
 }
 
 export default function Hero() {
@@ -134,24 +178,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.2 }}
           className="order-1 md:order-2 h-[300px] md:h-[400px]"
         >
-          {isClient ? (
-            <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
-              <ambientLight intensity={0.5} />
-              <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-              <pointLight position={[-10, -10, -10]} />
-              <Suspense fallback={null}>
-                <Float speed={1.5} rotationIntensity={1} floatIntensity={2}>
-                  <Model />
-                </Float>
-                <Environment preset="city" />
-              </Suspense>
-              <OrbitControls enableZoom={false} autoRotate />
-            </Canvas>
-          ) : (
-            <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg animate-pulse flex items-center justify-center">
-              <div className="text-primary/60">Loading 3D Model...</div>
-            </div>
-          )}
+          <SimpleHeroGraphic />
         </motion.div>
       </div>
     </div>

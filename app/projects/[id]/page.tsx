@@ -7,24 +7,63 @@ import { ArrowLeft, Github, ExternalLink, Calendar, Tag, Info } from "lucide-rea
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { projects } from "@/data/projects"
-import dynamic from "next/dynamic"
-import { Suspense } from "react"
-import { ProjectFallback } from "@/components/3d-fallback"
 
-// Dynamically import Canvas to avoid SSR issues
-const Canvas = dynamic(() => import("@react-three/fiber").then((mod) => mod.Canvas), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg animate-pulse" />
-  ),
-})
+// Simple 2D project visualization instead of 3D
+function ProjectVisualization({ type }: { type: string }) {
+  const getVisualization = () => {
+    if (type === "Frontend") {
+      return (
+        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg">
+          <motion.div
+            animate={{
+              rotate: [0, 360],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+            }}
+            className="relative"
+          >
+            <div className="w-24 h-24 border-4 border-blue-400 rounded-lg flex items-center justify-center">
+              <span className="text-3xl">🎨</span>
+            </div>
+            <div className="absolute -top-2 -right-2 w-6 h-6 bg-purple-500 rounded-full animate-pulse"></div>
+            <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-blue-500 rounded-full animate-bounce"></div>
+          </motion.div>
+        </div>
+      )
+    }
 
-const OrbitControls = dynamic(() => import("@react-three/drei").then((mod) => mod.OrbitControls), { ssr: false })
-const Environment = dynamic(() => import("@react-three/drei").then((mod) => mod.Environment), { ssr: false })
+    // FullStack visualization
+    return (
+      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-green-500/20 to-blue-500/20 rounded-lg">
+        <motion.div
+          animate={{
+            y: [-10, 10, -10],
+            rotate: [0, 5, -5, 0],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          }}
+          className="relative"
+        >
+          <div className="w-24 h-24 border-4 border-green-400 rounded-full flex items-center justify-center">
+            <span className="text-3xl">⚡</span>
+          </div>
+          <div className="absolute -top-3 -right-3 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+            <span className="text-xs">🔧</span>
+          </div>
+          <div className="absolute -bottom-3 -left-3 w-6 h-6 bg-green-500 rounded-full animate-ping"></div>
+        </motion.div>
+      </div>
+    )
+  }
 
-// Replace the Model component with this simplified version
-function Model({ projectType }: { projectType: string }) {
-  return <ProjectFallback type={projectType} />
+  return getVisualization()
 }
 
 export default function ProjectDetails() {
@@ -32,11 +71,6 @@ export default function ProjectDetails() {
   const router = useRouter()
   const [project, setProject] = useState<any>(null)
   const [loading, setLoading] = useState(true)
-  const [isClient, setIsClient] = useState(false)
-
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
 
   useEffect(() => {
     if (params.id) {
@@ -86,24 +120,9 @@ export default function ProjectDetails() {
               </div>
             </div>
 
-            {/* Update the 3D model section in the component to include error handling */}
+            {/* Project visualization */}
             <div className="mt-8 h-[300px] glass-card overflow-hidden rounded-xl">
-              {isClient ? (
-                <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
-                  <ambientLight intensity={0.5} />
-                  <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-                  <pointLight position={[-10, -10, -10]} />
-                  <Suspense fallback={null}>
-                    <Model projectType={project.type} />
-                    <Environment preset="city" />
-                  </Suspense>
-                  <OrbitControls autoRotate />
-                </Canvas>
-              ) : (
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg animate-pulse flex items-center justify-center">
-                  <div className="text-primary/60">Loading 3D Model...</div>
-                </div>
-              )}
+              <ProjectVisualization type={project.type} />
             </div>
           </motion.div>
 
