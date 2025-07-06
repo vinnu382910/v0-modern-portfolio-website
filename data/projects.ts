@@ -206,7 +206,7 @@ export const projects = [
   name: "GrowthProAI – Local Business Dashboard",
   image: "https://res.cloudinary.com/dgc9ugux7/image/upload/v1751831387/growthProAI_cbmbmu.png",
   github: "https://github.com/vinnu382910/GrowthProAI-Frontend",
-  liveDemo: "https://growthproai-frontend.netlify.app/",
+  liveDemo: "https://growth-pro-ai-frontend.vercel.app/",
   type: "FullStack",
   description:
     "GrowthProAI is a full-stack AI-powered dashboard that simulates Google-style ratings, reviews, and dynamic SEO headlines for local businesses. It uses Cohere AI for headline generation and is built using React.js and Node.js with fully responsive Tailwind CSS design.",
