@@ -122,7 +122,7 @@ export const projects = [
     timeline: "Mar 2024 - May 2024",
   },
   {
-  id: 2,
+  id: 11,
   name: "GrowthProAI – Local Business Dashboard",
   image: "https://res.cloudinary.com/dgc9ugux7/image/upload/v1751831387/growthProAI_cbmbmu.png",
   github: "https://github.com/vinnu382910/GrowthProAI-Frontend",
