@@ -122,26 +122,6 @@ export const projects = [
     timeline: "Mar 2024 - May 2024",
   },
   {
-  id: 11,
-  name: "GrowthProAI – Local Business Dashboard",
-  image: "https://res.cloudinary.com/dgc9ugux7/image/upload/v1751831387/growthProAI_cbmbmu.png",
-  github: "https://github.com/vinnu382910/GrowthProAI-Frontend",
-  liveDemo: "https://growthproai-frontend.netlify.app/",
-  type: "FullStack",
-  description:
-    "GrowthProAI is a full-stack AI-powered dashboard that simulates Google-style ratings, reviews, and dynamic SEO headlines for local businesses. It uses Cohere AI for headline generation and is built using React.js and Node.js with fully responsive Tailwind CSS design.",
-  technologies: ["React", "Node.js", "Express", "Cohere AI", "Tailwind CSS", "Fetch API"],
-  features: [
-    "🏪 Simulates local business ratings, reviews, and SEO headlines",
-    "📨 POST API to fetch business insights using form input (name & location)",
-    "🧠 Dynamic AI-generated headline via Cohere NLP (GET API)",
-    "⚡ Real-time form validation and toast notifications for feedback",
-    "🔄 Regenerate headlines on demand with loading spinners",
-    "📱 Fully responsive UI built with Tailwind CSS",
-    "🌐 Backend hosted on Render and frontend deployed via Netlify"
-  ]
-},
-  {
     id: 7,
     name: "Weather App",
     image:
@@ -221,4 +201,24 @@ export const projects = [
     ],
     timeline: "Apr 2025",
   },
+    {
+  id: 11,
+  name: "GrowthProAI – Local Business Dashboard",
+  image: "https://res.cloudinary.com/dgc9ugux7/image/upload/v1751831387/growthProAI_cbmbmu.png",
+  github: "https://github.com/vinnu382910/GrowthProAI-Frontend",
+  liveDemo: "https://growthproai-frontend.netlify.app/",
+  type: "FullStack",
+  description:
+    "GrowthProAI is a full-stack AI-powered dashboard that simulates Google-style ratings, reviews, and dynamic SEO headlines for local businesses. It uses Cohere AI for headline generation and is built using React.js and Node.js with fully responsive Tailwind CSS design.",
+  technologies: ["React", "Node.js", "Express", "Cohere AI", "Tailwind CSS", "Fetch API"],
+  features: [
+    "🏪 Simulates local business ratings, reviews, and SEO headlines",
+    "📨 POST API to fetch business insights using form input (name & location)",
+    "🧠 Dynamic AI-generated headline via Cohere NLP (GET API)",
+    "⚡ Real-time form validation and toast notifications for feedback",
+    "🔄 Regenerate headlines on demand with loading spinners",
+    "📱 Fully responsive UI built with Tailwind CSS",
+    "🌐 Backend hosted on Render and frontend deployed via Netlify"
+  ]
+}
 ]
