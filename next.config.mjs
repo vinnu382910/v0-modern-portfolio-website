@@ -1,21 +1,26 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   images: {
-    domains: [
-      'res.cloudinary.com',
-      'media-content.ccbp.in',
-      'img.icons8.com',
-      'nxtwave-website-media-files.s3.ap-south-1.amazonaws.com'
+    remotePatterns: [
+      { protocol: 'https', hostname: 'res.cloudinary.com' },
+      { protocol: 'https', hostname: 'media-content.ccbp.in' },
+      { protocol: 'https', hostname: 'img.icons8.com' },
+      { protocol: 'https', hostname: 'nxtwave-website-media-files.s3.ap-south-1.amazonaws.com' },
+      { protocol: 'https', hostname: 'blob.v0.app' },
+      { protocol: 'https', hostname: 'blobs.vusercontent.net' },
     ],
   },
   experimental: {
     esmExternals: 'loose',
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
   },
 }
 

@@ -24,6 +24,8 @@ export const metadata: Metadata = {
   keywords: "Full Stack Developer, MERN Stack, React, Node.js, MongoDB, JavaScript, Web Development, Kalva Vinay",
   authors: [{ name: "Kalva Vinay" }],
   creator: "Kalva Vinay",
+  viewport: "width=device-width, initial-scale=1",
+  robots: "index, follow",
     generator: 'v0.app'
 }
 
@@ -34,7 +36,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className={`${spaceGrotesk.variable} ${poppins.variable} font-sans`}>
+      <head>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      </head>
+      <body className={`${spaceGrotesk.variable} ${poppins.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="space"
