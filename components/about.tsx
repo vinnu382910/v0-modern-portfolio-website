@@ -30,7 +30,7 @@ export default function About() {
         >
           <div className="group relative w-full max-w-sm aspect-square overflow-hidden rounded-xl md:rounded-2xl border border-white/20 shadow-2xl">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/vinay572-FKfetGFZmWRadawpdQhLoU0qBcNWsS.jpeg"
+              src="https://res.cloudinary.com/dgc9ugux7/image/upload/v1761478711/vinay572_cujxbc.jpg"
               alt="Kalva Vinay - Full Stack Developer"
               fill
               className="object-cover transition-all duration-500 filter group-hover:grayscale-0 grayscale"

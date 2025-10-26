@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 11,
     name: "TalentQuiz Labs - LMS Micro Certification Platform",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-LEUKva4XULOPoqZ8xsGA8P28ydzcSb.png",
+    image: "https://res.cloudinary.com/dgc9ugux7/image/upload/v1761478744/microceritifications_ekpytc.png",
     github: "https://github.com/vinnu382910/LMS-Micro-Certification-frontend",
     liveDemo: "https://lms-micro-certification-frontend.vercel.app/",
     type: "FullStack",
