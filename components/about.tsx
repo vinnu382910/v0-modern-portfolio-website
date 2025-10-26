@@ -28,16 +28,15 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex justify-center"
         >
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-glow"></div>
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-white/20">
-              <Image
-                src="https://res.cloudinary.com/dgc9ugux7/image/upload/v1729162938/IMG_20240622_170531_k7incs.jpg"
-                alt="Kalva Vinay"
-                fill
-                className="object-cover"
-              />
-            </div>
+          <div className="group relative w-full max-w-sm aspect-square overflow-hidden rounded-xl md:rounded-2xl border border-white/20 shadow-2xl">
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/vinay572-FKfetGFZmWRadawpdQhLoU0qBcNWsS.jpeg"
+              alt="Kalva Vinay - Full Stack Developer"
+              fill
+              className="object-cover transition-all duration-500 filter group-hover:grayscale-0 grayscale"
+              priority
+            />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/0 transition-all duration-500"></div>
           </div>
         </motion.div>
 

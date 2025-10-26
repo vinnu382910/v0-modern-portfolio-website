@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   keywords: "Full Stack Developer, MERN Stack, React, Node.js, MongoDB, JavaScript, Web Development, Kalva Vinay",
   authors: [{ name: "Kalva Vinay" }],
   creator: "Kalva Vinay",
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({

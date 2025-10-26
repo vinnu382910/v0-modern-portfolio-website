@@ -1,5 +1,27 @@
 export const projects = [
   {
+    id: 11,
+    name: "TalentQuiz Labs - LMS Micro Certification Platform",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-LEUKva4XULOPoqZ8xsGA8P28ydzcSb.png",
+    github: "https://github.com/vinnu382910/LMS-Micro-Certification-frontend",
+    liveDemo: "https://lms-micro-certification-frontend.vercel.app/",
+    type: "FullStack",
+    description:
+      "TalentQuiz Labs is a comprehensive Learning Management System built with the MERN stack. Features include user authentication with JWT, interactive quiz interface with timer functionality, real-time result tracking, and automated PDF certificate generation for passed assessments. The platform supports multiple quiz levels, technology filtering, and secure backend integration with MongoDB.",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "JWT", "Axios", "React Router", "PDF Generation"],
+    features: [
+      "🔐 Secure JWT-based authentication with protected routes",
+      "🧩 Interactive quiz interface with timer and progress tracking",
+      "📊 Real-time results display with detailed answer review",
+      "🎓 Automated PDF certificate generation for passed quizzes",
+      "🔍 Advanced filtering by difficulty level and technology tags",
+      "📱 Fully responsive design for all devices",
+      "⚡ Optimized API integration with Axios",
+      "💾 Comprehensive results tracking and history",
+    ],
+    timeline: "Jan 2025 - Ongoing",
+  },
+  {
     id: 1,
     name: "ShopEasy - eCommerce Platform",
     image: "https://res.cloudinary.com/dgc9ugux7/image/upload/v1747488073/shopeasy-homepage_haxejz.png",
@@ -201,24 +223,4 @@ export const projects = [
     ],
     timeline: "Apr 2025",
   },
-    {
-  id: 11,
-  name: "GrowthProAI – Local Business Dashboard",
-  image: "https://res.cloudinary.com/dgc9ugux7/image/upload/v1751831387/growthProAI_cbmbmu.png",
-  github: "https://github.com/vinnu382910/GrowthProAI-Frontend",
-  liveDemo: "https://growth-pro-ai-frontend.vercel.app/",
-  type: "FullStack",
-  description:
-    "GrowthProAI is a full-stack AI-powered dashboard that simulates Google-style ratings, reviews, and dynamic SEO headlines for local businesses. It uses Cohere AI for headline generation and is built using React.js and Node.js with fully responsive Tailwind CSS design.",
-  technologies: ["React", "Node.js", "Express", "Cohere AI", "Tailwind CSS", "Fetch API"],
-  features: [
-    "🏪 Simulates local business ratings, reviews, and SEO headlines",
-    "📨 POST API to fetch business insights using form input (name & location)",
-    "🧠 Dynamic AI-generated headline via Cohere NLP (GET API)",
-    "⚡ Real-time form validation and toast notifications for feedback",
-    "🔄 Regenerate headlines on demand with loading spinners",
-    "📱 Fully responsive UI built with Tailwind CSS",
-    "🌐 Backend hosted on Render and frontend deployed via Netlify"
-  ]
-}
 ]
