@@ -35,9 +35,9 @@ export default function Home() {
       <section id="projects" className="min-h-screen py-20">
         <Projects />
       </section>
-      <section id="certificates" className="min-h-screen py-20">
+      {/* <section id="certificates" className="min-h-screen py-20">
         <Certificates />
-      </section>
+      </section> */}
       <section id="contact" className="min-h-screen py-20">
         <Contact />
       </section>
