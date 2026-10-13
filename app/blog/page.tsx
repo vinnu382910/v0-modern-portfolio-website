@@ -7,7 +7,7 @@ import { Calendar, Clock, User, ArrowRight } from "lucide-react"
 const blogPosts = [
   {
     id: 1,
-    title: "My Journey at Ganapathy Engineering College: From Student to Full Stack Developer",
+    title: "My Journey at ABCD College: From Student to Full Stack Developer",
     excerpt: "Discover how my time at Ganapathy Engineering College shaped my career as a Full Stack Developer.",
     author: "Kalva Vinay",
     date: "2024-01-15",
