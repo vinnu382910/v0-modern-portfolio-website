@@ -52,7 +52,7 @@ export default function About() {
           <p className="mb-6 text-white/80 leading-relaxed">
             👋 Hey there! I&apos;m Vinay, a passionate full-stack developer with expertise in building robust and
             user-friendly web applications. I&apos;m a B.Tech graduate in Computer Science Engineering with
-            specialization in Cyber Security from Ganapathy Engineering College, Warangal (CGPA: 7.0/10).
+            specialization in Cyber Security from Ganapathy Engineering College, Warangal (CGPA: 0.0/10).
           </p>
 
           <p className="mb-6 text-white/80 leading-relaxed">
@@ -82,19 +82,19 @@ export default function About() {
           <div className="flex flex-col gap-3 text-white/80">
             <div className="flex items-center gap-2">
               <Mail className="text-primary" size={18} />
-              <a href="mailto:vinaykalva712@gmail.com" className="hover:text-primary transition-colors">
-                vinaykalva712@gmail.com
+              <a href="mailto:abcd@gmail.com" className="hover:text-primary transition-colors">
+                abcd@gmail.com
               </a>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="text-primary" size={18} />
-              <a href="tel:+917286945691" className="hover:text-primary transition-colors">
-                +91 7286945691
+              <a href="tel:+91123456789" className="hover:text-primary transition-colors">
+                +91 123456789
               </a>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="text-primary" size={18} />
-              <span>Warangal, Telangana, India</span>
+              <span>**** Telangana, India</span>
             </div>
           </div>
         </motion.div>
